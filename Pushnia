@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    double t1, t2, t3;
+    double productivity1, productivity2, productivity3, total_productivity, total_time;
+    
+    printf("Введіть три значення: \n");
+    scanf("%lf %lf %lf", &t1, &t2, &t3);
+
+    productivity1 = 1 / t1;
+    productivity2 = 1 / t2;
+    productivity3 = 1 / t3;
+    
+    total_productivity = productivity1 + productivity2 + productivity3;
+    
+    total_time = 1 / total_productivity;
+    
+    printf("Час, необхідний для з'їдання пирога: %.2f годин\n", total_time);
+    
+    return 0;
+}
