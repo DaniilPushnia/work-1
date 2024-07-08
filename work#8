@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int factorial(int n) {
+    int fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int count_of_Anagrams(char *word) {
+    int len = strlen(word);
+    int freq[300] = {0};
+
+    for (int i = 0; i < len; i++) {
+        freq[(int)word[i]]++;
+    }
+
+    int anagrams = factorial(len);
+    for (int i = 0; i < 256; i++) {
+        if (freq[i] > 1) {
+            anagrams /= factorial(freq[i]);
+        }
+    }
+
+    return anagrams;
+}
+
+int main() {
+    char word[15];
+
+    printf("Введіть слово: ");
+    scanf("%s", word);
+
+    int anagrams = count_of_Anagrams(word);
+    printf("Кількість анаграм: %d\n", anagrams);
+
+    return 0;
+}
