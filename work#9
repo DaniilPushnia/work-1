@@ -16,8 +16,6 @@ int min_steps(int x, int y) {
             steps++;
             if (abs(y - current_pos) < step_length) {
                 step_length--;
-            } else if (abs(y - current_pos) == step_length) {
-                // do nothing
             } else {
                 step_length++;
             }
@@ -33,12 +31,12 @@ int min_steps(int x, int y) {
 
 int main() {
     int x, y;
-    
+
     printf("Введіть значення x: ");
     scanf("%d", &x);
     printf("Введіть значення y: ");
     scanf("%d", &y);
-    
+
     int result = min_steps(x, y);
     printf("Мінімальна кількість кроків від %d до %d: %d\n", x, y, result);
 
