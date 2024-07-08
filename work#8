@@ -14,7 +14,7 @@ int count_of_Anagrams(char *word) {
     int freq[300] = {0};
 
     for (int i = 0; i < len; i++) {
-        freq[(int)word[i]]++;
+        freq[word[i]]++;
     }
 
     int anagrams = factorial(len);
